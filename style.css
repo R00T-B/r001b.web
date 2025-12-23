@@ -1,65 +1,58 @@
 :root { --neon: #00FF41; --bg: #050505; --font-mono: 'Fira Code', monospace; }
 
-/* TÜM KAYDIRMA ÇUBUKLARINI GİZLE */
-* { margin: 0; padding: 0; box-sizing: border-box; scrollbar-width: none; -ms-overflow-style: none; }
+* { margin: 0; padding: 0; box-sizing: border-box; scrollbar-width: none; }
 *::-webkit-scrollbar { display: none; }
 
 body { background: var(--bg); color: #fff; font-family: 'Inter', sans-serif; overflow: hidden; height: 100vh; width: 100vw; }
 
-/* ARKA PLAN LOG AKIŞI */
+/* KALI ARKA PLAN AKIŞI */
 #kali-bg-flow {
-    position: fixed; inset: 0; z-index: -1; opacity: 0.12; pointer-events: none;
-    font-family: var(--font-mono); font-size: 13px; color: var(--neon);
-    padding: 20px; line-height: 1.8; overflow: hidden;
+    position: fixed; inset: 0; z-index: -1; 
+    opacity: 0.30; pointer-events: none;
+    font-family: var(--font-mono); font-size: 15px; color: var(--neon);
+    padding: 45px; line-height: 1.8; overflow: hidden;
+    background: var(--bg);
 }
 
-/* HEADER */
-.main-header { position: fixed; top: 0; width: 100%; padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
-.logo { font-family: var(--font-mono); font-weight: 900; letter-spacing: -1px; }
+.main-header { position: fixed; top: 0; width: 100%; padding: 30px 60px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+.logo { font-family: var(--font-mono); font-weight: 900; }
 .logo span { color: var(--neon); }
-.nav-links { display: flex; gap: 40px; }
-.nav-item { text-decoration: none; color: #444; font-family: var(--font-mono); font-size: 0.8rem; cursor: pointer; transition: 0.3s; }
+.nav-links { display: flex; gap: 30px; }
+.nav-item { color: #444; font-family: var(--font-mono); font-size: 0.8rem; cursor: pointer; transition: 0.3s; }
 .nav-item.active { color: var(--neon); text-shadow: 0 0 10px var(--neon); }
 
-/* YATAY AKIŞ SİSTEMİ */
 #main-container { 
     display: flex; width: 100vw; height: 100vh; 
-    overflow-x: auto; overflow-y: hidden; 
-    scroll-snap-type: x mandatory; scroll-behavior: smooth; 
-}
-.panel { 
-    min-width: 100vw; height: 100vh; flex-shrink: 0; 
-    display: flex; justify-content: center; align-items: center; 
-    scroll-snap-align: start; padding: 40px; 
+    overflow-x: auto; overflow-y: hidden;
+    scroll-snap-type: x mandatory; scroll-behavior: smooth;
+    position: relative; z-index: 1; background: transparent;
 }
 
-/* HUD KUTUSU */
+.panel { min-width: 100vw; height: 100vh; flex-shrink: 0; display: flex; justify-content: center; align-items: center; scroll-snap-align: start; padding: 20px; }
+
 .glitch-box {
-    background: rgba(0, 10, 0, 0.95); border: 1px solid rgba(0, 255, 65, 0.2);
-    border-left: 6px solid var(--neon); padding: 60px; width: 90%; max-width: 900px;
-    position: relative; animation: floating 6s infinite ease-in-out;
+    background: rgba(0, 8, 0, 0.96); border: 1px solid rgba(0, 255, 65, 0.2);
+    border-left: 6px solid var(--neon); padding: clamp(30px, 5vw, 60px); 
+    width: 90%; max-width: 850px; position: relative; 
+    animation: floating 6s infinite ease-in-out; word-wrap: break-word;
 }
-.hero-name { font-size: clamp(2.5rem, 8vw, 6rem); line-height: 0.9; margin-bottom: 25px; }
+
+.hero-name { font-size: clamp(2rem, 8vw, 5.5rem); line-height: 0.9; margin-bottom: 20px; }
 .hero-name span { -webkit-text-stroke: 1px var(--neon); color: transparent; }
 
-/* DAKTİLO İMLECİ */
-.bio-text { color: #aaa; font-size: 1.1rem; line-height: 1.7; min-height: 120px; }
+.bio-text { color: #aaa; font-size: clamp(0.9rem, 1.1vw, 1.15rem); line-height: 1.7; min-height: 100px; }
 .cursor { display: inline-block; width: 10px; height: 1.2em; background: var(--neon); margin-left: 5px; vertical-align: middle; animation: blink 0.8s infinite; }
 
-/* SEKTÖRLER */
-.skills-split { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
-.skill-sector { padding: 25px; border: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02); }
+.skills-split { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
+.skill-sector { padding: 20px; border: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02); }
 .red-theme { border-left: 4px solid #ff3e3e; }
 .blue-theme { border-left: 4px solid #00e5ff; }
-.skill-tags span { display: inline-block; border: 1px solid #333; padding: 4px 10px; font-size: 0.7rem; margin: 4px; font-family: var(--font-mono); }
 
-/* İLETİŞİM */
 .contact-node { background: rgba(255,255,255,0.02); border: 1px solid rgba(0,255,65,0.1); padding: 20px; margin-bottom: 10px; display: flex; justify-content: space-between; }
 
-/* SPLASH SCREEN */
-#splash-screen { position: fixed; inset: 0; background: #000; z-index: 10000; display: flex; justify-content: center; align-items: center; transition: 0.8s ease; }
-.terminal-window { width: 90%; max-width: 650px; background: #0c0c0c; border: 1px solid #333; border-radius: 8px; overflow: hidden; }
-#terminal-content { padding: 20px; color: var(--neon); font-family: var(--font-mono); height: 260px; font-size: 14px; line-height: 1.6; }
+#splash-screen { position: fixed; inset: 0; background: #000; z-index: 10000; display: flex; justify-content: center; align-items: center; transition: 0.8s; }
+.terminal-window { width: 90%; max-width: 600px; background: #0c0c0c; border: 1px solid #333; border-radius: 8px; overflow: hidden; }
+#terminal-content { padding: 20px; color: var(--neon); font-family: var(--font-mono); height: 250px; font-size: 14px; }
 
 @keyframes blink { 50% { opacity: 0; } }
-@keyframes floating { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+@keyframes floating { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
