@@ -3,20 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>r001B // Cyber Operations</title>
+    <title>r001B // Global Security Hub</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@900&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <div class="crt-overlay"></div>
+
     <div id="splash-screen">
         <div class="terminal-window">
             <div class="terminal-bar">
                 <div class="btns"><span class="r"></span><span class="y"></span><span class="g"></span></div>
-                <div class="t-title">root@kali: ~/access_bypass.sh</div>
+                <div class="t-title">SYSTEM_INITIALIZATION_v4.sh</div>
             </div>
             <div id="terminal-content"></div>
         </div>
+    </div>
+
+    <div class="hud-widgets">
+        <div class="widget">NODE: r001B_MASTER</div>
+        <div class="widget">STATUS: <span class="neon-text">ENCRYPTED</span></div>
+        <div id="live-clock" class="widget">00:00:00</div>
+    </div>
+
+    <div class="scroll-indicator">
+        <div class="dot active" onclick="scrollToPanel(0)"></div>
+        <div class="dot" onclick="scrollToPanel(1)"></div>
+        <div class="dot" onclick="scrollToPanel(2)"></div>
     </div>
 
     <div id="kali-bg-flow"></div>
@@ -24,34 +38,31 @@
     <header class="main-header">
         <div class="logo">r001B<span>_CORE</span></div>
         <nav class="nav-links">
-            <span class="nav-item active">HAKKIMDA</span>
-            <span class="nav-item">YETENEKLER</span>
-            <span class="nav-item">İLETİŞİM</span>
+            <span class="nav-item active" onclick="scrollToPanel(0)">IDENTITY</span>
+            <span class="nav-item" onclick="scrollToPanel(1)">SYSTEM_ANALYSIS</span>
+            <span class="nav-item" onclick="scrollToPanel(2)">CONNECT</span>
         </nav>
     </header>
 
     <main id="main-container">
         <section class="panel">
             <div class="glitch-box">
-                <span class="tag">// IDENTITY_RECORDS</span>
+                <span class="tag">// ID_RECORDS</span>
                 <h1 class="hero-name">BURAK <br><span>BEŞTEPE</span></h1>
-                <div class="bio-text">
-                    Siber dünyanın mimarisi ile savunma hatları arasındaki çizgide uzmanlaşmış bir Sistem Mimarıyım. Ofansif güvenlik bakış açısıyla hem sarsılmaz sistemler hem de kusursuz kullanıcı deneyimleri inşa ediyorum.
-                </div>
+                <div class="bio-text">Ofansif güvenlik uzmanı ve sistem mimarı. Dijital dünyada savunma hatlarını sarsılmaz kılan modern bir mimar.</div>
             </div>
         </section>
 
         <section class="panel">
             <div class="glitch-box">
-                <h2 class="section-title">> TEKNİK_YETENEKLER</h2>
-                <div class="skills-split">
-                    <div class="skill-sector red-theme">
-                        <h3>SİBER GÜVENLİK</h3>
-                        <div class="skill-tags"><span>Penetration</span><span>Red Team</span><span>OWASP</span></div>
-                    </div>
-                    <div class="skill-sector blue-theme">
-                        <h3>DEVELOPMENT</h3>
-                        <div class="skill-tags"><span>SCSS</span><span>Node.js</span><span>Figma</span></div>
+                <h2 class="section-title">> SİSTEM_ANALİZİ</h2>
+                <div class="hud-grid">
+                    <div class="hud-item red-theme"><div class="hud-tag">SKILL_RED</div><h3>RED TEAM</h3></div>
+                    <div class="hud-item blue-theme"><div class="hud-tag">SKILL_DEV</div><h3>DEV_OPS</h3></div>
+                    <div class="hud-item project-style">
+                        <div class="hud-tag">PROJ_001</div>
+                        <h3>Pentest Rpt</h3>
+                        <a href="#" class="hud-btn">ACCESS_DATA</a>
                     </div>
                 </div>
             </div>
@@ -59,9 +70,11 @@
 
         <section class="panel">
             <div class="glitch-box">
-                <h2 class="section-title">> GÜVENLİ_BAĞLANTI</h2>
-                <div class="contact-node"><span>MAIL:</span> <span>contact@burakbestepe.com</span></div>
-                <div class="contact-node"><span>STATUS:</span> <span style="color:var(--neon)">ENCRYPTED</span></div>
+                <h2 class="section-title">> BAĞLANTI</h2>
+                <div class="hud-item project-style">
+                    <div class="hud-tag">SECURE_CHANNEL</div>
+                    <span>contact@burakbestepe.com</span>
+                </div>
             </div>
         </section>
     </main>
